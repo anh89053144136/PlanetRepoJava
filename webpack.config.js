@@ -2,14 +2,14 @@ const path = require('path');
 const webpack = require('webpack');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const CheckerPlugin = require('awesome-typescript-loader').CheckerPlugin;
-const bundleOutputDir = './wwwroot/dist';
+const bundleOutputDir = './WebContent/dist';
 
 module.exports = (env) => {
     const isDevBuild = true;//!(env && env.prod);
     return [{
 		mode: 'development', // production
         stats: { modules: false },
-        entry: { 'main': './ClientApp/index.jsx' },
+        entry: { 'main': './ClientApp/boot.tsx' },
         resolve: { extensions: ['.js', '.jsx', '.ts', '.tsx'] },
         output: {
             path: path.join(__dirname, bundleOutputDir),
@@ -27,7 +27,7 @@ module.exports = (env) => {
             //new CheckerPlugin(),
             new webpack.DllReferencePlugin({
                 context: __dirname,
-                manifest: require('./wwwroot/dist/vendor-manifest.json')
+                manifest: require('./WebContent/dist/vendor-manifest.json')
             })
         ]/*.concat(isDevBuild ? [
             // Plugins that apply in development builds only

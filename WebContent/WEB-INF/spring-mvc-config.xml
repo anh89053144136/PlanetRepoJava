@@ -60,4 +60,6 @@
 	-->
 	
  	<bean id="multipartResolver" class="org.springframework.web.multipart.support.StandardServletMultipartResolver"/>
+ 	
+ 	<mvc:resources mapping="/dist/**" location="/dist/" />
 </beans>
