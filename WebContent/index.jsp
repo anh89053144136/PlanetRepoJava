@@ -4,7 +4,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>TestReact</title>
-    <base href="/" />
+    <script>document.write('<base href="' + document.location + '" />');</script>
 
 	<script src="dist/vendor.js"></script>
 

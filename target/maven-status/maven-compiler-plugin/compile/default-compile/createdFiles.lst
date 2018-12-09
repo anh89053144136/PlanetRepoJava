@@ -1,1 +1,3 @@
 planetrepo\controllers\ViewController.class
+planetrepo\entities\ClientDate.class
+planetrepo\entities\Planet.class
