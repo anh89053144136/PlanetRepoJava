@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-2.0.xsd">
+	<changeSet id="migration1" author="Ivan">
+	    <createTable tableName="planets">
+	        <column name="Id" type="bigint(20)" autoIncrement="true">
+	            <constraints primaryKey="true" nullable="false"/>
+	        </column>
+	        <column name="name" type="varchar(1000)">
+	            <constraints nullable="false" unique="true"/>
+	        </column>
+	        <column name="lastVisitDate" type="datetime">
+	            <constraints nullable="true" unique="false"/>
+	        </column>
+	    </createTable>
+	<rollback>
+		<dropTable tableName="planets"/>
+	</rollback>
+	</changeSet>
+</databaseChangeLog>
